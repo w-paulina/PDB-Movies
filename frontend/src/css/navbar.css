@@ -1,0 +1,137 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 65px;
+    margin: 0 8px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-logo {
+    font-weight: 300;
+    font-size: x-large;
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo-img {
+    max-height: 55px; 
+    max-width: 55px;
+}
+
+.nav-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+.nav-links-logged {
+    display: flex;
+    justify-content: space-between;
+    font-size: larger;
+    width: 45%;
+}
+
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    font-size: larger;
+    width: 25%;
+}
+
+.nav-links-a a:hover {
+    transform: scale(1.05);
+}
+
+.nav-links-a a {
+    transition: 0.5s all;
+    font-weight: 200;
+}
+
+@media screen and (max-width: 1350px) {
+    .nav-links {
+        width: 35%;
+    }  
+    .nav-links-logged {
+        width: 54%;
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+    .nav-links {
+        width: 45%;
+    }  
+    .nav-links-logged {
+        width: 63%;
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+        height: auto;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        font-size: larger;
+        width: 100%; 
+    }
+
+    .nav-links-logged {
+        flex-direction: column;
+        font-size: larger;
+        width: 100%; 
+    }
+
+    .nav-link {
+        width: 100%;
+        margin: auto;
+        text-align: center;
+        padding: 11px 0;
+        border-top: 2px solid rgba(255,255,255, 0.1);
+       }
+
+    .nav-link:last-of-type{
+        border-bottom: 2px solid rgba(255,255,255, 0.1);        
+    }
+
+    .nav-header{
+        display: flex;
+        width: 100%;
+        align-items: center;
+    }
+
+    .nav-logo{
+        margin: auto;
+    }
+
+    .nav-btn{
+        display: inline-flex;
+        width: 40px;
+        height: 40px;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width:425px) {
+    .nav-logo-img{
+        max-height: 45px; 
+        max-width: 45px;
+    }
+
+    .nav-logo {
+        font-weight: 300;
+        font-size: larger;
+    }
+}

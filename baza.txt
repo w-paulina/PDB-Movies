@@ -1,0 +1,321 @@
+CREATE DATABASE imaginaris
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'Polish_Poland.1250'
+    LC_CTYPE = 'Polish_Poland.1250'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+	
+CREATE TABLE IF NOT EXISTS public."users"
+(
+    "user_id" serial,
+    "email" character varying(45) COLLATE pg_catalog."default" NOT NULL,
+    "password" character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    "nickname" character varying(45) COLLATE pg_catalog."default" NOT NULL,
+    "profile_picture" bytea,
+    CONSTRAINT "users_pkey" PRIMARY KEY ("user_id")
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public."users"
+    OWNER to postgres;
+	
+CREATE TABLE IF NOT EXISTS public."movies"
+(
+    "movie_id" serial,
+    "title" character varying(45) COLLATE pg_catalog."default" NOT NULL,
+    "director" character varying(45) COLLATE pg_catalog."default" NOT NULL,
+    "year_of_production" integer NOT NULL,
+    "description" character varying(300) COLLATE pg_catalog."default" NOT NULL,
+    "url" character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    "thumbnail" character varying(45) NOT NULL,
+	"genre_id" integer[] NOT NULL,
+    CONSTRAINT "movies_pkey" PRIMARY KEY ("movie_id")
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public."movies"
+    OWNER to postgres;
+	
+CREATE TABLE IF NOT EXISTS public."recommendations"
+(
+    "recommendation_id" serial,
+    "sender_id" integer NOT NULL,
+    "receiver_id" integer NOT NULL,
+    "movie_id" integer NOT NULL,
+    CONSTRAINT "recommendations_pkey" PRIMARY KEY ("recommendation_id"),
+    CONSTRAINT "recommendations_movie_id_fkey" FOREIGN KEY ("movie_id")
+        REFERENCES public."movies" ("movie_id") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT "recommendations_receiver_id_fkey" FOREIGN KEY ("receiver_id")
+        REFERENCES public."users" ("user_id") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT "recommendations_sender_id_fkey" FOREIGN KEY ("sender_id")
+        REFERENCES public."users" ("user_id") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public."recommendations"
+    OWNER to postgres;
+	
+CREATE TABLE IF NOT EXISTS public."ratings"
+(
+    "rating_id" serial,
+    "rate" integer NOT NULL,
+    "user_id" integer NOT NULL,
+    "movie_id" integer NOT NULL,
+    CONSTRAINT "ratings_pkey" PRIMARY KEY ("rating_id"),
+    CONSTRAINT "ratings_movie_id_fkey" FOREIGN KEY ("movie_id")
+        REFERENCES public."movies" ("movie_id") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT "ratings_user_id_fkey" FOREIGN KEY ("user_id")
+        REFERENCES public."users" ("user_id") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public."ratings"
+    OWNER to postgres;
+	
+CREATE TABLE IF NOT EXISTS public."notifications"
+(
+    "notification_id" serial,
+    "type" character varying(45) COLLATE pg_catalog."default" NOT NULL,
+    "movie_id" integer,
+    "sender_id" integer,
+    "receiver_id" integer NOT NULL,
+    CONSTRAINT "notifications_pkey" PRIMARY KEY ("notification_id"),
+    CONSTRAINT "notifications_movie_id_fkey" FOREIGN KEY ("movie_id")
+        REFERENCES public."movies" ("movie_id") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT "notifications_receiver_id_fkey" FOREIGN KEY ("receiver_id")
+        REFERENCES public."users" ("user_id") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT "notifications_sender_id_fkey" FOREIGN KEY ("sender_id")
+        REFERENCES public."users" ("user_id") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public."notifications"
+    OWNER to postgres;
+	
+CREATE TABLE IF NOT EXISTS public."messages"
+(
+    "message_id" serial,
+    "message_content" character varying(300) COLLATE pg_catalog."default" NOT NULL,
+    "send_date" timestamp without time zone NOT NULL,
+    "sender_id" integer NOT NULL,
+    "receiver_id" integer NOT NULL,
+    CONSTRAINT "messages_pkey" PRIMARY KEY ("message_id"),
+    CONSTRAINT "messages_receiver_id_fkey" FOREIGN KEY ("receiver_id")
+        REFERENCES public."users" ("user_id") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT "messages_sender_id_fkey" FOREIGN KEY ("sender_id")
+        REFERENCES public."users" ("user_id") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public."messages"
+    OWNER to postgres;
+	
+CREATE TABLE IF NOT EXISTS public."logged_in_users"
+(
+	"token" character varying(100),
+    "session_id" character varying(100),
+    "log_in_hour" time without time zone NOT NULL,
+    "user_id" integer NOT NULL,
+    CONSTRAINT "logged_in_users_pkey" PRIMARY KEY ("token"),
+    CONSTRAINT "logged_in_users_user_id_fkey" FOREIGN KEY ("user_id")
+        REFERENCES public."users" ("user_id") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public."logged_in_users"
+    OWNER to postgres;
+	
+CREATE TABLE IF NOT EXISTS public."comments"
+(
+    "comment_id" serial,
+    "parent_id" integer,
+    "comment_content" character varying(200) COLLATE pg_catalog."default" NOT NULL,
+    "movie_id" integer NOT NULL,
+    "author_id" integer NOT NULL,
+    CONSTRAINT "comments_pkey" PRIMARY KEY ("comment_id"),
+    CONSTRAINT "comments_author_id_fkey" FOREIGN KEY ("author_id")
+        REFERENCES public."users" ("user_id") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT "comments_movie_id_fkey" FOREIGN KEY ("movie_id")
+        REFERENCES public."movies" ("movie_id") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public."comments"
+    OWNER to postgres;
+	
+CREATE TABLE IF NOT EXISTS public."likes"
+(
+    "like_id" serial,
+    "is_positive" boolean NOT NULL,
+    "giver_id" integer NOT NULL,
+    "comment_id" integer NOT NULL,
+    CONSTRAINT "likes_pkey" PRIMARY KEY ("like_id"),
+    CONSTRAINT "likes_comment_id_fkey" FOREIGN KEY ("comment_id")
+        REFERENCES public."comments" ("comment_id") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT "likes_giver_id_fkey" FOREIGN KEY ("giver_id")
+        REFERENCES public."users" ("user_id") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public."likes"
+    OWNER to postgres;
+	
+	
+CREATE TABLE IF NOT EXISTS public."genres"
+(
+    "genre_id" serial,
+    "name" character varying(45) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT "genres_pkey" PRIMARY KEY ("genre_id")
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public."genres"
+    OWNER to postgres;
+	
+CREATE TABLE IF NOT EXISTS public.movie_genre
+(
+    "genre_id" integer NOT NULL,
+    "movie_id" integer NOT NULL,
+    CONSTRAINT "movie_genre_genre_id_fkey" FOREIGN KEY ("genre_id")
+        REFERENCES public."genres" ("genre_id") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT "movie_genre_movie_id_fkey" FOREIGN KEY ("movie_id")
+        REFERENCES public."movies" ("movie_id") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.movie_genre
+    OWNER to postgres;
+	
+CREATE TABLE IF NOT EXISTS public."friends"
+(
+    "friend_one_id" integer NOT NULL,
+    "friend_two_id" integer NOT NULL,
+is_accepted boolean NOT NULL DEFAULT false,
+    CONSTRAINT "friends_friend_one_fkey" FOREIGN KEY ("friend_one")
+        REFERENCES public."users" ("user_id") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT "friends_friend_two_fkey" FOREIGN KEY ("friend_two")
+        REFERENCES public."users" ("user_id") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public."friends"
+    OWNER to postgres;
+
+CREATE TABLE IF NOT EXISTS public."favourite_movies"
+(
+    movie_id integer NOT NULL,
+    user_id integer NOT NULL,
+    CONSTRAINT movie_id FOREIGN KEY (movie_id)
+        REFERENCES public.movies (movie_id) MATCH SIMPLE
+        ON UPDATE CASCADE
+        ON DELETE CASCADE
+        NOT VALID,
+    CONSTRAINT user_id FOREIGN KEY (user_id)
+        REFERENCES public.users (user_id) MATCH SIMPLE
+        ON UPDATE CASCADE
+        ON DELETE CASCADE
+        NOT VALID
+);
+
+ALTER TABLE public."favourite_movies"
+    OWNER to postgres;
+
+    CREATE TABLE IF NOT EXISTS public."movies_to_watch"
+(
+    movie_id integer NOT NULL,
+    user_id integer NOT NULL,
+    CONSTRAINT movie_id FOREIGN KEY (movie_id)
+        REFERENCES public.movies (movie_id) MATCH SIMPLE
+        ON UPDATE CASCADE
+        ON DELETE CASCADE
+        NOT VALID,
+    CONSTRAINT user_id FOREIGN KEY (user_id)
+        REFERENCES public.users (user_id) MATCH SIMPLE
+        ON UPDATE CASCADE
+        ON DELETE CASCADE
+        NOT VALID
+);
+
+ALTER TABLE public."movies_to_watch"
+    OWNER to postgres;
+
+CREATE TABLE public.photos
+(
+    "photo_id" serial,
+    "photo_path" character varying(55) NOT NULL
+);
+
+ALTER TABLE IF EXISTS public.photos
+    OWNER to postgres;
+
+CREATE TABLE public.seen_movies
+(
+    movie_id integer NOT NULL,
+    user_id integer NOT NULL,
+    finished_at bigint NOT NULL,
+    CONSTRAINT movie_id FOREIGN KEY (movie_id)
+        REFERENCES public.movies (movie_id) MATCH SIMPLE
+        ON UPDATE CASCADE
+        ON DELETE CASCADE,
+    CONSTRAINT user_id FOREIGN KEY (user_id)
+        REFERENCES public.users (user_id) MATCH SIMPLE
+        ON UPDATE CASCADE
+        ON DELETE CASCADE
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.seen_movies
+    OWNER to postgres;

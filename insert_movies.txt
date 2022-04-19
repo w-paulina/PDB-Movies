@@ -1,0 +1,17 @@
+INSERT INTO public.movies(
+	title, director, year_of_production, description, url, thumbnail, genre_id)
+	VALUES ('Piraci z Karaibów', 'Espen Sandberg', '2003', 'opis piratów', '.\movies\Piraci z Karaibów - Klątwa czarnej perły.mp4', 'piraci_z_karaibow.jpg','{4,7}'),
+		('Skazani na Shawshank', 'Frank Darabont', '1994', 'ipiiiss sdsaddi fjhusjs', '.\movies\Skazani na Shawshank.mp4', 'skazani_na_shawshank.jpg','{1}'),
+		('Incepcja', 'Christopher Nolan', '2010', 'ipiiiss sdsaddi fjhusjs', '.\movies\Incepcja.mp4', 'incepcja.jpg','{9,4,1}'),
+		('Zielona mila', 'Frank Darabont', '1999', 'ipiiiss sdsaddi fjhusjs', '.\movies\Zielona mila.mp4', 'zielona_mila.jpg','{1}'),
+		('Wilk z wallstreet', 'Martin Scorsese', '2013', 'ipiiiss sdsaddi fjhusjs', './movies/Wilk z wallstreet.mp4', 'wilk_z_wallstreet.jpg','{2,4}'),
+		('Władca pierścieni - Drużyna pierścienia', 'Peter Jackson', '2001', 'ipiiiss sdsaddi fjhusjs', './movies/Władca pierścieni - Drużyna pierścienia.mp4', 'wladca_pierscieni.jpg','{3,7,4}'),
+		('Forrest Gump', 'Robert Zemeckis', '1994', 'ipiiiss sdsaddi fjhusjs', '.\movies\ForrestGump.mp4', 'forrest_gump.jpg','{1}'),
+		('Avatar', 'James Cameron', '2009', 'ipiiiss sdsaddi fjhusjs', '.\movies\Avatar.mp4', 'avatar.jpg','{3,9,3}'),
+		('Leon zawodowiec', 'Luc Besson', '1995', 'ipiiiss sdsaddi fjhusjs', '.\movies\LeonZawodowiec.mp4', 'leon_zawodowiec.jpg','{4,1}'),
+		('Podziemny krąg', 'David Fincher', '1999', 'ipiiiss sdsaddi fjhusjs', '.\movies\PodziemnyKrąg.mp4', 'podziemny_krąg.jpg','{4,1}'),
+		('Titanic', 'James Cameron', '1997', 'ipiiiss sdsaddi fjhusjs', '.\movies\Titanic.mp4', 'titanic.jpg','{1}'),	
+		('Shrek', 'Vicky Jenson, Andrew Adamson', '2001', 'ipiiiss sdsaddi fjhusjs', '.\movies\Shrek.mp4', 'shrek.jpg','{3}'),	
+		('Ojciec chrzestny', 'Francis Ford Coppola', '1992', 'ipiiiss sdsaddi fjhusjs', '.\movies\OjciecChrzestny.mp4', 'ojciec_chrzestny.jpg','{1,4}'),
+		('Jestem legendą', 'Francis Lawrence', '2007', 'ipiiiss sdsaddi fjhusjs', '.\movies\JestemLegendą.mp4', 'jestem_legenda.jpg','{6,9}'),		
+		('Igrzyska śmierci', 'Gary Ross', '2012', 'ipiiiss sdsaddi fjhusjs', '.\movies\IgrzyskaŚmierci.mp4', 'igrzyska_śmierci.jpg','{4,9,3}')

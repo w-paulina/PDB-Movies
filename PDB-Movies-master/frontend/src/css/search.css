@@ -1,0 +1,140 @@
+.search-container {
+    margin: 10px 0;
+}
+
+.search-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-label {
+    font-size: medium;
+}
+
+.search-section-movies {
+    width: 55%;
+}
+
+.search-section-users {
+    width: 44%;
+}
+
+.search-input {
+    margin: 10px 25px;
+    width: 50%;
+    border: none;
+    height: 35px;
+    background-color: transparent;
+    font-size: 25px;
+    color: white;
+    border-bottom: 2px solid rgba(198,132,191,0.65);
+    font-weight: 300;
+}
+
+::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+.search-box {
+    width: 90%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin: 25px;
+    padding: 27px;
+    background-color: rgba(61, 62, 71, 0.5);
+    border-radius: 12px;
+}
+
+.search-link {
+    border-bottom: 2px solid transparent;
+    max-width: max-content ;
+    font-size: 20px ;
+    margin: 7px 0;
+}
+
+.search-link:hover {
+    border-bottom: 2px solid rgba(198,132,191,0.65);
+}
+
+.search-list {
+    height: 89%;
+    padding-right: 10px;
+    width: 90%;
+    overflow-y: scroll;
+}
+
+.search-list::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+.search-list::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    margin: 2px ;
+    border-radius: 16px;
+  }
+  
+.search-list:hover::-webkit-scrollbar-thumb {
+    background-color: #8D8FA2;
+  } 
+
+.search-input:focus {
+    outline: none;
+}
+
+.search-section-title {
+    font-weight: 400;
+    font-size: 32px;
+    margin-bottom: 14px;
+    color: rgba(198,132,191,0.85);
+}
+
+@media screen and (max-width: 768px) {
+    .search-section-title{
+        font-size: x-large;
+    }
+    
+    .search-box{
+        margin: auto;
+    }
+
+    .search-link {
+        font-size: 17px ;
+    }
+
+}
+
+@media screen and (max-width:600px){
+    .search-box{
+        flex-direction: column;
+        margin: auto;
+        width: 83%;
+    }
+
+    .search-container{
+        margin: auto;
+    }
+    .search-list {
+        margin: auto;
+        width: 100%;
+        height: auto;
+    }
+
+    .search-section {
+        width: 100%;
+    }
+
+    .search-section-users{
+        height: 100%;
+    }
+
+    .search-section-title{
+        text-align: center;
+    }
+
+    .search-section-users .search-section-title{
+        margin-top: 14px;
+    }
+}

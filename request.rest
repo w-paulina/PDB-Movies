@@ -1,0 +1,31 @@
+POST http://localhost:5000/api/users/signUp
+Content-Type: application/json
+
+{
+    "nickname": "SiSiSenior",
+    "email": "SeniorBokoko@bokos1.ms",
+    "password": "bokieeem1",
+    "repeatPassword": "bokieeem1"
+}
+###
+POST http://localhost:5000/api/users/signIn
+Content-Type: application/json
+
+{    
+    "email": "SeniorBoko@bokos1.ms",
+    "password": "bokieeem1"   
+}
+###
+GET http://localhost:5000/api/user
+###
+GET http://localhost:5000/api/comments/get/4
+
+###
+POST http://localhost:5000/api/comments/addCommentLike
+Content-Type: application/json
+
+{
+    "isPositive": "true",
+    "comment_id": "1",
+}
+

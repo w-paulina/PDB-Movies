@@ -1,0 +1,326 @@
+.user-avatar-image {
+    height: 130px;
+    width: 130px;
+    border-radius: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.user-info {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.user-section-right {
+    background: linear-gradient(90deg, rgba(86,88,101,0.5) 30%, rgba(170,170,170,0) 100%);
+    height: 130px;
+    width: 40%;
+    position: relative;
+    right: 70px;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-body {
+    display: flex;
+    height: 100%;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#user-name {
+    font-size: x-large;
+    position: relative;
+    font-weight: 300;
+    width: 100%;
+    left: 5px;
+    margin-bottom: 5px;
+}
+
+#user-email {
+    font-size: small;
+    position: relative;
+    width: 100%;
+    left: 25px;
+}
+
+.edit-user-info {
+    position: relative;
+    left: 40px;
+}
+
+.edit-user-info-image {
+    height: 45px;
+    width: 45px;
+}
+
+.friends-and-stats-section {
+    width: 90%;
+    margin: 40px auto;
+    display: flex;
+    justify-content:space-between;
+}
+
+.header-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.header-section {
+    display: flex;
+    align-items: center;
+}
+
+.friends-section {
+    width: 50%;
+}
+
+.friends-list {
+    width: 70%;
+    height: 360px;
+    overflow-y: scroll;
+    margin-left: 10px;
+}
+
+.friends-list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px 0 5px 10px;
+}
+
+.stats-section {
+    width: 50%;
+}
+
+h2 {
+    font-weight: 400;
+}
+
+.friends-list-button-img {
+    width: 28px;
+    height: 28px;
+}
+
+.friends-list-button {
+    background-color: transparent;
+    border: none;
+    padding: 1px;
+    cursor: pointer;
+}
+
+.friend-list-data {
+    display: flex;
+    align-items: center;
+}
+
+.friend-avatar-img {
+    height: 42px;
+    width: 42px;
+    border-radius: 100%;
+}
+
+.friend-name {
+    font-weight: 300;
+    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+.friend-name link{
+    text-decoration: none;
+}
+
+.friends-list::-webkit-scrollbar {
+    width: 4px;
+}
+
+.friends-list::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    margin: 2px ;
+    border-radius: 16px;
+}
+
+.friends-list:hover::-webkit-scrollbar-thumb {
+    background-color: #8D8FA2;
+} 
+
+.pie-chart {
+    margin: 20px;
+}
+
+.no-friends-box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.no-friends-info {
+    padding: 14px 12px;
+    background-color: rgba(61, 62, 71, 0.5);
+    border-radius: 10px;
+}
+
+@media screen and (max-width:1100px) {
+    .container {
+        width: 95vw;
+        margin: 0 auto;
+    }
+
+    .friends-and-stats-section{
+        width: 100%;
+        margin: 30px auto;
+    }
+
+    .user-section-right{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .container {
+        width: 85vw;
+        margin: 0 auto;
+    }
+
+    .friends-and-stats-section{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .friends-section{
+        width: 75%;
+        margin: 20px 20px;
+    }
+
+    .friends-list{
+        height: auto;
+        width: 100%;
+    }
+
+    .friends-list-item{
+        width: 90%;
+    }
+
+    #user-name {
+        font-size: 21px;
+        width: 100%;
+        left: 35px;
+    }
+
+    #user-email {
+        width: 100%;
+        left: 50px;
+    }
+
+    .stats-section{
+        width: 75%;
+        margin: 20px 20px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .friends-section{
+        width: 85%;
+        margin: 20px 20px;
+    }
+    .stats-section{
+        width: 85%;
+        margin: 20px 20px;
+    }
+
+    .user-avatar-image{
+        height: 100px;
+        width: 100px;
+    }
+
+    .user-section-right {
+        height: 100px;
+        width: 70%;
+        right: 45px;
+    }
+
+    .edit-user-info-image{
+        height: 30px;
+        width: 30px;
+    }
+
+    #user-name {
+        font-size: 19px;
+        width: 100%;
+        left: 35px;
+    }
+
+    #user-email {
+        width: 100%;
+        left: 50px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .user-info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 70%;
+        margin: 10px auto 0;
+        padding-top: 10px;
+        border-top-left-radius: 60px;
+        border-top-right-radius: 60px;
+        background: linear-gradient(180deg, rgba(86,88,101,0.5) 30%, rgba(170,170,170,0) 100%);
+    }
+
+    .user-avatar-image{
+        height: 150px;
+        width: 150px;
+    }
+
+    .user-section-right{
+        margin: auto;
+        position: static;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        width: 100%;
+    }
+
+    #user-name {
+        font-size: 30px;
+        position: static;
+        text-align: center;
+    }
+
+    .edit-user-info{
+        position: static;
+        margin: auto;
+        text-align: center;
+    }
+
+    #user-email {
+        font-size: 20px;
+        position: static;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    .user-body{
+        align-items: center;
+        width: max-content;
+    }
+
+    .friends-and-stats-section{
+        margin-top: 5px;
+    }
+
+}

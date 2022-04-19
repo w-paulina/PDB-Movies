@@ -1,0 +1,124 @@
+.container-change-picture {
+    z-index: 3;
+    height: min-content;
+    width: 580px;
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, rgb(128, 91, 124) 0%, rgb(92, 93, 109) 100%);   
+    border-radius: 10px;
+    position: absolute;
+    padding: 40px 40px;
+    animation: animate 1s;
+    left: 0; 
+    right: 0;
+    top: 0;
+    bottom: 0; 
+     margin: auto;
+  }
+
+  .container-change-picture h1 {
+    font-size: x-large;
+    font-weight: 300;
+    margin: 0 auto 15px;
+  }
+
+input[type="radio"] {
+    display: none;
+}
+
+.edit-picture-button {
+    border: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 8px;
+    font-weight: 400;
+    color: white;
+    font-size: 12px;
+    padding: 12px 16px;
+    margin: 6px 0;
+    width: fit-content;
+}
+
+.pictures-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.edit-picture-buttons {
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+}
+
+.edit-picture-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    margin: 5px;
+    transition: 0.4s;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 3px;
+}
+
+.edit-picture-img:hover {
+    transform: scale(1.15);
+    cursor: pointer;
+}
+
+input[type="radio"]:checked+.edit-picture-img {
+    transform: scale(1.15);
+    border-color: #ff4d4d;
+}
+
+input[type="radio"]:not(:checked)+.edit-picture-img {
+    opacity: 0.9;
+}
+
+@media screen and (max-width:768px) {
+    .container-change-picture{
+        width: 350px;
+        left: 0; 
+        right: 0;
+        top: 75%; 
+        margin: auto;
+    }
+
+    .edit-picture-img {
+        width: 71px;
+        height: 71px;
+    }   
+}
+
+@media screen and (max-width:470px) {
+    .container-change-picture{
+        width: 200px;
+        padding: 20px;
+        left: 0; 
+        right: 0;
+        top: 95%; 
+        margin: auto; 
+    }
+    .container-change-picture h1{
+        font-size: 19px;
+    }
+
+    .edit-picture-button{
+        padding: 9px 12px;
+        margin: 2px;
+    }
+
+    
+
+    .edit-picture-img {
+        width: 50px;
+        height: 50px;
+    }   
+}
+
+

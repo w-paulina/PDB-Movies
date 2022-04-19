@@ -1,0 +1,147 @@
+.notifications-list-container {
+    width: 50%;
+    height: 85%;
+    margin: auto;
+    padding: 30px;
+    background-color: rgba(61, 62, 71, 0.5);
+    border-radius: 15px;
+}
+
+.notifications-list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+.notifications-list h1{
+    font-size: x-large;
+    font-weight: 300;
+    margin: 0 auto 10px;
+}
+
+.notification {
+    background-color: rgba(136, 138, 157, 0.4);
+    margin: 10px;
+    font-size: larger;
+    display: flex;
+    align-items: center;
+    font-weight: 300;
+    padding: 8px 10px;
+    border-radius: 8px;
+    width: 93%;
+}
+
+.notification-movie-img {
+    width: 40px;
+    height: 60px;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.notification-button {
+    border: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 8px;
+    font-weight: 400;
+    color: white;
+    font-size: 10px;
+    padding: 8px 12px;
+    width: fit-content;
+}
+
+.notifications-list::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+.notifications-list::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    margin: 2px ;
+    border-radius: 16px;
+  }
+  
+.notifications-list:hover::-webkit-scrollbar-thumb {
+    background-color: #8D8FA2;
+  } 
+
+.notification-user-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+.notification-item{
+    width: 93%;
+}
+
+.notification-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.notification-content p{
+    margin: 2px 4px;
+}
+
+.notification-invitation {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 1064px){
+.notifications-list-container{
+    width: 60%;
+    height: 85%;
+}
+
+    .notification-content p{
+        font-size: 18px;
+    }
+
+    .notification-buttons{
+        margin: 3px;
+    }
+}
+
+@media screen and (max-width: 920px){
+    .notifications-list-container{
+        width: 65%;
+    }
+}
+
+@media screen and (max-width: 620px){
+    .notifications-list-container{
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .notifications-list-container{
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 425px){
+    .notifications-list-container{
+        width: 95%;
+        padding: 17px 10px;
+        margin: auto;
+    }
+
+    .notifications-list{
+        overflow-x: hidden;
+    }
+
+    .notification-content p{
+        font-size: 15px;
+    }
+
+    .notification-movie-img {
+        max-width: 34px;
+        max-height: 51px;
+    }
+
+}

@@ -1,0 +1,27 @@
+input[type="radio"] {
+    display: none;
+}
+
+.star {
+    cursor: pointer;
+    transition: color 200ms;
+}
+
+@media screen and (max-width:768px) {
+    .movie-item-section-right .star{
+        width: 20px;
+        height: 20px;
+    }
+
+    .star-rating .star {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media screen and (max-width:535px) {
+    .movie-item-section-right  .star{
+        width: 15px;
+        height: 15px;
+    }
+}

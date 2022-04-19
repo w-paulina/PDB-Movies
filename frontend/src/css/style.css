@@ -1,0 +1,230 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #474854;
+    background: linear-gradient(180deg, rgba(141,143,163,1) 0%, rgba(71,72,84,1) 100%);    
+    background-attachment: fixed;
+    color: white;
+}
+
+.container {
+    width: 85vw;
+    margin: 0 auto;
+}
+
+.landing-page {
+    min-height: calc(100vh - 102px);
+    font-weight: 200;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.login-box {
+    background-color: rgba(61, 62, 71, 0.5);
+    display: flex;
+    flex-direction: column;
+    width: 35vw;
+    height: 400px;
+    margin: auto;
+    margin-top: 55px;
+    padding: 40px 40px;
+    border-radius: 15px;
+}
+
+.registration-box{
+    background-color: rgba(61, 62, 71, 0.5);
+    display: flex;
+    flex-direction: column;
+    width: 35vw;
+    height: 500px;
+    margin: auto;
+    margin-top: 55px;
+    padding: 40px 40px;
+    border-radius: 15px;
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    margin: 20px 40px 15px 40px;
+}
+
+.form-element {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0;
+}
+
+.form-element > input {
+    background-color: #C4C4C4;
+    border: none;
+    height: 35px;
+    margin-top: 5px;
+}
+
+.form-element > input:focus{
+    outline: none;
+}
+
+.box-logo {
+    margin: auto;
+}
+
+.box-info-text {
+    margin: auto;
+    text-align: center;
+    flex: 1;
+}
+
+.box-info-text-login:last-of-type{
+    border-left: white 1px groove;
+}
+
+.box-logo > h1 {
+    font-size: x-large;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.box-info-text > h2 {
+    font-weight: 400;
+    padding-bottom: 2px;
+}
+
+.box-info-text > a{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.box-info {
+    display: flex;
+    margin-bottom: 15px;
+    justify-content: space-around;
+}
+
+.login-box .box-info{
+    margin-top: 20px;    
+}
+
+.registration-error {
+    color: #ff1a1a;
+    font-size: small;
+    margin: 2px 0;
+}
+
+.submit-button {
+    border: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 8px;
+    font-weight: 400;
+    color: white;
+    font-size: 16px;
+    padding: 15px 28px;
+    margin: 20px auto 15px auto;
+    width: fit-content;
+}
+
+.btn {
+    background: linear-gradient(180deg, rgba(198,132,191,0.65) 0%, rgba(145,176,189,0.65) 100%);
+}
+
+.btn:hover {
+    cursor: pointer;
+    background: linear-gradient(180deg, rgba(198,132,191,0.8) 0%, rgba(145,176,189,0.8) 100%);
+}
+
+@media screen and (max-width:1024px){
+    .registration-form {
+        margin: 20px 0 15px;
+        margin: auto;
+    }
+
+    .registration-box{
+        width: 45vw;
+        margin: 10px auto;
+    }
+
+    .login-box{
+        width: 45vw;
+        margin: 10px auto;
+    }
+
+    .form-element > input {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:850px){
+    .registration-box{
+        width: 55vw;
+    }
+
+    .login-box{
+        width: 55vw;
+    }
+}
+
+@media screen and (max-width:768px){
+    .landing-page{
+        min-height:calc(100vh - 92px);
+    }
+}
+
+@media screen and (max-width:600px){
+    .registration-box{
+        width: 60vw;
+        padding: 20px;
+    }
+
+    .login-box{
+        width: 60vw;
+        padding: 25px;
+    }
+}
+
+@media screen and (max-width:425px){
+    .form-element > input {
+        height: 30px;
+    }
+
+    .landing-page{
+        min-height:calc(100vh - 82px);
+    }
+
+    .registration-form{
+        margin: 15px auto;
+    }
+
+    .registration-box{
+        height: 450px;
+    }
+
+    .login-box{
+        height: 350px;
+    }
+
+    .submit-button{
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+
+    .box-logo{
+        margin: 10px auto;
+    }
+
+    .box-info-text{
+        font-size: 14px;
+    }
+
+    .box-logo > h1 {
+        font-size: larger;
+    }
+}
+

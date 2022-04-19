@@ -1,0 +1,19 @@
+.movie-list-container {
+    padding-top: 40px;
+} 
+
+.movie-genre-box {
+    margin: 0 auto 30px auto;
+}
+
+.movie-genre-title {
+    font-size: large;
+    font-weight: 200;
+    margin-bottom: 8px;
+}
+
+.main-movie-genre-title {
+    font-size: x-large;
+    font-weight: 200;
+    margin-bottom: 8px;
+}

@@ -1,0 +1,160 @@
+.header-icon {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.fav-movies-section-box {
+    margin: 30px auto;
+}
+
+.fav-movie-list{
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 380px;
+    overflow-y: scroll;
+}
+
+.no-fav-movie-list {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-size: smaller;
+    font-weight: 300;
+}
+
+.no-fav-movie-list p {
+    background-color: rgba(61, 62, 71, 0.5);
+    padding: 11px 8px;
+    border-radius: 7px;
+}
+
+
+.fav-movie-item {
+    display: flex;
+    width: 30%;
+    margin: 20px 0 0 30px;
+}
+
+.fav-movie-item a {
+    display: flex;
+    text-decoration: none;
+    color: white;
+    align-items: center;
+}
+
+.fav-movie-cover-img {
+    width: 102px;
+    height: 144px;
+}
+
+.movie-item-section-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 30px 20px 30px 40px;
+}
+
+.fav-movie-list::-webkit-scrollbar {
+    width: 4px;
+}
+
+.fav-movie-list::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    margin: 2px ;
+    border-radius: 16px;
+}
+
+.fav-movie-list:hover::-webkit-scrollbar-thumb {
+    background-color: #8D8FA2;
+}
+
+.fav-movie-title {
+    font-size: x-large;
+    font-weight: 300;
+}
+
+.year-of-production {
+    margin: 4px 0;
+}
+
+.rating {
+    margin-top: 4px;
+}
+
+@media screen and (max-width: 1130px) {
+    .movie-item-section-right {
+        margin: 30px 20px;
+    }
+    
+}
+
+@media screen and (max-width: 1064px) {
+    .fav-movies-section-box{
+        width: 90%;
+        margin: 30px auto;
+    }
+    .fav-movie-item{
+        width: 50%;
+        margin-left: 0;
+    }
+
+    .fav-movie-title{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .fav-movie-cover-img{
+        width: 86px;
+        height: 122px;
+    }
+
+    .fav-movies-section-box{
+        width: 100%;
+    }
+
+    .fav-movie-item{
+        width: 50%;
+        margin-left: 0;
+    }
+    
+}
+
+@media screen and (max-width:600px){
+    .fav-movie-item{
+        width: 50%;
+        margin-top: 12px;
+    }
+
+    .fav-movie-cover-img{
+        width: 73px;
+        height: 103px;
+    }
+}
+
+@media screen and (max-width:560px){
+    .fav-movie-title{
+        font-size: 15px;
+    }
+
+    .year-of-production{
+        font-size: 12px;
+    }
+
+    .fav-movie-list{
+        overflow-x: hidden;
+    }
+}
+
+@media screen and (max-width:426px){
+    .fav-movie-item{
+        width: 100%;
+    }
+}

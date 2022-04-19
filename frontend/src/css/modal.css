@@ -1,0 +1,89 @@
+#portal .container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background: rgba(0, 0, 0, 0.0);
+  z-index: 2;
+}
+.container .modal {
+  z-index: 3;
+  width: 200px;
+  height: 300px;
+  background: linear-gradient(180deg, rgb(128, 91, 124) 0%, rgb(92, 93, 109) 100%);
+  border-radius: 10px;
+  bottom: 0;
+  padding: 20px;
+  right: 10px;
+  position: absolute;
+  animation: animate 1s;
+}
+.modal button {
+  font-family: 'Poppins', sans-serif;
+  color:white;
+  border-radius: 8px;
+  border: none;
+  margin-right: 6px;
+  padding: 2% 5%;
+  font-size: x-small;
+  font-weight: 400;  
+}
+
+
+.modal-header {
+  font-weight: 300;
+  font-size: large;
+  margin-bottom: 25px;
+}
+
+@keyframes animate {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.user-list-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  margin-bottom: 30px ;
+  margin-top: 6px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.user-list-name {
+  font-weight: 300;
+  color: white;
+  font-size: small;
+}
+
+.modal-list-buttons modal {
+  background: black;
+}
+
+.modal-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.modal-list::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  margin: 2px ;
+  border-radius: 16px;
+}
+
+.modal-list:hover::-webkit-scrollbar-thumb {
+  background-color: #8D8FA2;
+} 
+
+.modal-list {
+  height: 85%;
+  overflow-y: scroll;
+}

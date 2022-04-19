@@ -1,0 +1,28 @@
+.footer-links {
+    display: flex;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    padding: 0 3px;
+}
+
+.footer-links{
+    margin-right: 8px;
+}
+
+.footer p {
+    margin-left: 8px;
+}
+
+.footer {
+    margin: auto 8px ;
+    height: 30px;
+    color: white;
+    font-weight: 200;
+    border-top: white groove 1px;
+    padding-top: 6px;
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,0 +1,233 @@
+.fr-user-avatar-image {
+    height: 130px;
+    width: 130px;
+    border-radius: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.fr-user-info {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.fr-user-section-right {
+    background: linear-gradient(90deg, rgba(86,88,101,0.5) 30%, rgba(170,170,170,0) 100%);
+    height: 130px;
+    width: 40%;
+    position: relative;
+    right: 70px;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fr-user-body {
+    display: flex;
+    height: 100%;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.prof-user-name{
+    font-size: x-large;
+    position: relative;
+    font-weight: 300;
+    width: 100%;
+    left: 20px;
+    margin-bottom: 5px;
+}
+
+.prof-user-email {
+    font-size: small;
+    font-weight: 200;
+    position: relative;
+    width: 100%;
+    left: 40px;
+}
+
+.user-button-img {
+    width: 32px;
+    height: 32px;
+    color: white;
+}
+
+.user-button {
+    background-color: transparent;
+    border: none;
+    padding-right: 2px;
+    cursor: pointer;
+}
+
+.user-buttons {
+    position: relative;
+    left: 40px;
+}
+
+.statistics-section {
+    width: 90%;
+    margin: 40px auto 40px ;
+    display: flex;
+    justify-content:space-between;
+}
+
+.statistics-section-item {
+    width: 50%;
+    height: 400px;
+}
+
+.stats-header-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.percent-icon {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+}
+
+.similarity-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    height: 320px;
+    border-radius: 100%;
+    background-color: rgba(61, 62, 71, 0.5);
+    margin: auto ;
+}
+
+.similarity-value {
+    font-size: 70px;
+    font-weight: 400;
+    text-align: center;
+}
+
+@media screen and (max-width:1100px) {
+    .container {
+        width: 95vw;
+        margin: 0 auto;
+    }
+
+    .fr-user-section-right{
+        width: 50%;
+    }
+
+    .prof-user-name{
+        left: 45px;
+    }
+    
+    .prof-user-email {
+        left: 65px;
+    }
+}
+
+@media screen and (max-width:786px) {
+    .statistics-section{
+        flex-direction: column;
+    }
+
+    .statistics-section-item{
+        width: 70%;
+        margin: auto;
+    }
+
+    .prof-user-name {
+        font-size: 21px;
+        left: 40px;
+    }
+
+    .prof-user-email {
+        left: 55px;
+    }
+}
+
+@media screen and (max-width: 640px){
+    .fr-user-avatar-image{
+        height: 100px;
+        width: 100px;
+    }
+
+    .fr-user-section-right {
+        height: 100px;
+        width: 70%;
+        right: 45px;
+    }
+
+    .user-button-img{
+        height: 30px;
+        width: 30px;
+    }
+
+    .prof-user-name {
+        font-size: 19px;
+        width: 100%;
+        left: 35px;
+    }
+
+    .prof-user-email {
+        width: 100%;
+        left: 50px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .fr-user-info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 70%;
+        margin: 10px auto 0;
+        padding-top: 10px;
+        border-top-left-radius: 60px;
+        border-top-right-radius: 60px;
+        background: linear-gradient(180deg, rgba(86,88,101,0.5) 30%, rgba(170,170,170,0) 100%);
+    }
+
+    .fr-user-avatar-image{
+        height: 150px;
+        width: 150px;
+    }
+
+    .fr-user-section-right{
+        margin: auto;
+        position: static;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        width: 100%;
+    }
+
+    .prof-user-name {
+        font-size: 30px;
+        position: static;
+        text-align: center;
+    }
+
+    .user-buttons{
+        position: static;
+        margin: auto;
+        text-align: center;
+    }
+
+    .prof-user-email {
+        font-size: 20px;
+        position: static;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    .fr-user-body{
+        align-items: center;
+        width: max-content;
+    }
+}
+
